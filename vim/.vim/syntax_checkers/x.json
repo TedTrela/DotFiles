@@ -1,0 +1,26 @@
+{
+    "name" : "MxContentSvc"
+    /* "version" : "0.0.1", */ 
+    /* "description" : "Mastering Content Services", */
+    /* "keywords" : "Mastering Content" */
+    /* "name" : { */
+    /*             "Ted Trela", */
+    /*             "email" : "ted.trela@pearson.com" */
+    /*          }, */
+    /* "main" :    "MxContentSvc", */
+    /* "directories.lib" : "./src", */
+    /* "scripts" : { */
+    /*                 "start" : "node index.js", */
+    /*                 "test"  : "mocha -R spec" */
+    /*             }, */
+   /* "engines" : { */
+    /*   "node" : "0.8.x" */
+   /* }, */
+    /* "dependencies" : { */
+    /*                     "express" : "*" */
+    /*                  }, */
+    /* "devDependencies" : { */
+    /*                         "mocha" : "*" */
+    /*                      }, */
+    /* "private" :     "true" */
+}

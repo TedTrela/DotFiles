@@ -195,11 +195,24 @@ nmap ,v :call  Compile ()<cr>
 "      execute 'e `perldoc -l ' . expand("<cWORD>") . '`'
 "endfunction
 
-"delete insert blanklines below/above ctrl/alt-j and ctrl/alt-k
-"nnoremap <C-j> m`:+g/\m^\s*$/d<CR>``:noh<CR>
-"nnoremap <C-k> m`:-g/\m^\s*$/d<CR>``:noh<CR>
-"nnoremap <M-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-"nnoremap <M-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+let mapleader = ","
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <leader><space> :noh<CR>
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<CR>
+nnoremap <leader>em <C-w><C-v><C-l>:e ~/mxconfig/conf/local.yml<CR>
+nnoremap <leader>eb <C-w><C-v><C-l>:e ~/.bashrc<CR>
+
+nnoremap <leader>a :Ack
+nnoremap <leader>v V`]
+inoremap jj <ESC>
+noremap <leader>w <C-w>v<C-w>l
+
+"JSON Formatting and syntax
+map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+"au BufRead,BufnewFile *.json set filetype=json foldmethod=syntax
+"au! Syntax json source $HOME/.vim/syntax/json.vim
 
 
 noremap <Up> <nop>

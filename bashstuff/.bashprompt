@@ -21,12 +21,12 @@ bash_prompt_command() {
     fi
     
     JOBCOUNT=""
-    local numjobs=`jobs -s | wc -l`
+    local numjobs=`jobs | wc -l`
     if [ "${numjobs}" -ne "0" ] 
     then 
 	JOBCOUNT="[${numjobs}]"
     fi
-    #echo "jobcount: ${JOBCOUNT}"
+# echo "jobcount: ${JOBCOUNT}"
 
     #echo `__git_ps1`
     GIT=$(__git_ps1)
