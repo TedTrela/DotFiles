@@ -78,6 +78,10 @@ set stl+=%*
 
 let g:pad_dir = '~/notes'
 
+
+
+let g:maintainer='{ "name": "Ted Trela" }'
+
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
