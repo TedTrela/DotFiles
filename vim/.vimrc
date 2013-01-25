@@ -8,6 +8,10 @@
 "-------------------------------------------------------------------------------
 set nocompatible
 "
+"
+"
+let mapleader = ","
+"
 "-------------------------------------------------------------------------------
 " Enable file type detection. Use the default filetype settings.
 " Also load indent files, to automatically do language-dependent indenting.
@@ -42,6 +46,7 @@ set autoread                    " read open files again when changed outside Vim
 set autowrite                   " write a modified buffer on each :next , ...
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 "set backup                      " keep a backup file
+set backupcopy=yes              " this will prevent inodes from changing when writing a file
 set browsedir=current           " which directory to use for the file browser
 set complete+=k                 " scan the files given with the 'dictionary' option
 set complete-=i
@@ -199,22 +204,20 @@ nmap ,v :call  Compile ()<cr>
 "      execute 'e `perldoc -l ' . expand("<cWORD>") . '`'
 "endfunction
 
-
-let mapleader = ","
 nnoremap / /\v
 vnoremap / /\v
-nnoremap <leader><space> :noh<CR>
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<CR>
-nnoremap <leader>em <C-w><C-v><C-l>:e ~/mxconfig/conf/local.yml<CR>
-nnoremap <leader>eb <C-w><C-v><C-l>:e ~/.bashrc<CR>
+nnoremap <Leader><space> :noh<CR>
+nnoremap <Leader>ev <C-w><C-v><C-l>:e $MYVIMRC<CR>
+nnoremap <Leader>em <C-w><C-v><C-l>:e ~/mxconfig/conf/local.yml<CR>
+nnoremap <Leader>eb <C-w><C-v><C-l>:e ~/.bashrc<CR>
 
-nnoremap <leader>a :Ack
-nnoremap <leader>v V`]
+nnoremap <Leader>a :Ack
+nnoremap <Leader>v V`]
 inoremap jj <ESC>
-noremap <leader>w <C-w>v<C-w>l
+noremap <Leader>w <C-w>v<C-w>l
 
 "JSON Formatting and syntax
-map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+map <Leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 "au BufRead,BufnewFile *.json set filetype=json foldmethod=syntax
 "au! Syntax json source $HOME/.vim/syntax/json.vim
 
@@ -226,8 +229,8 @@ noremap <Right> <nop>
 
 nnoremap mr :MRU<CR>
 nnoremap cdc :CDC<CR>
-nnoremap <leader>sw :set wrap<CR>
-nnoremap <leader>nsw :set nowrap<CR>
+nnoremap <Leader>sw :set wrap<CR>
+nnoremap <Leader>nsw :set nowrap<CR>
 
 
 map <C-J>  <C-W>j<C-W>_
