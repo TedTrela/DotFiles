@@ -4,6 +4,24 @@
 "               2011-10-12: Use less code.  Leave room for deeper levels.
 "==============================================================================
 
+let g:rbpt_colorpairs = [
+	\ ['darkcyan',    'RoyalBlue3'],
+	\ ['darkred',     'SeaGreen3'],
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['brown',       'firebrick3'],
+	\ ['darkblue',    'SeaGreen3'],
+	\ ['gray',        'RoyalBlue3'],
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['darkblue',    'firebrick3'],
+	\ ['darkgreen',   'RoyalBlue3'],
+	\ ['darkcyan',    'SeaGreen3'],
+	\ ['darkred',     'DarkOrchid3'],
+	\ ['red',         'firebrick3'],
+	\ ['brown',       'RoyalBlue4'],
+	\ ['darkgreen',   'firebrick3'],
+	\ ]
+let g:rbpt_max=14
+
 let s:pairs = [
 	\ ['darkcyan',    'RoyalBlue3'],
 	\ ['darkred',     'SeaGreen3'],
