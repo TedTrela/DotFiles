@@ -7,9 +7,35 @@
 " This must be first, because it changes other options as a side effect.
 "-------------------------------------------------------------------------------
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 "
-"
-"
+"let Vundle manage Vundle
+ " required! 
+ Bundle 'gmarik/vundle'
+
+ " My Bundles here:
+ "
+ " original repos on github
+ "Bundle 'tpope/vim-fugitive'
+ "Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'tpope/vim-rails.git'
+ " vim-scripts repos
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+ " non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+ " ...
+
+ Bundle 'Lokaltog/vim-powerline'
+ Bundle 'fugitive'
+
+
+filetype plugin indent on     " required!
 let mapleader = ","
 "
 "-------------------------------------------------------------------------------
@@ -50,6 +76,7 @@ set backupcopy=yes              " this will prevent inodes from changing when wr
 set browsedir=current           " which directory to use for the file browser
 set complete+=k                 " scan the files given with the 'dictionary' option
 set complete-=i
+set encoding=utf-8
 set expandtab
 set history=50                  " keep 50 lines of command line history
 set hlsearch                    " highlightthe last used search pattern
@@ -80,6 +107,10 @@ set stl+=%#warningmsg#
 set stl+=%{SyntasticStatuslineFlag()}
 set stl+=%*
 
+
+"Powerline stuff
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_theme = 'default'
 
 let g:pad_dir = '~/notes'
 
