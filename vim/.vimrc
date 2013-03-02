@@ -31,8 +31,9 @@ call vundle#rc()
 " Bundle 'git://git.wincent.com/command-t.git'
  " ...
 
- Bundle 'Lokaltog/vim-powerline'
- Bundle 'fugitive'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'fugitive.vim'
+Bundle 'tpope/vim-git'
 
 
 filetype plugin indent on     " required!
