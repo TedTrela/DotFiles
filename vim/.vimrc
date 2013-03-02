@@ -14,7 +14,7 @@ call vundle#rc()
 
 "
 "let Vundle manage Vundle
-" Bundle 'gmarik/vundle'
+ Bundle 'gmarik/vundle'
 
  " My Bundles here:
  "
@@ -30,9 +30,9 @@ call vundle#rc()
 " Bundle 'git://git.wincent.com/command-t.git'
  " ...
 
-"Bundle 'Lokaltog/vim-powerline'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'tpope/vim-git'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
 
 
 filetype plugin indent on     " required!
