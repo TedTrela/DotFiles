@@ -58,7 +58,9 @@ set ignorecase smartcase
 set incsearch                   " do incremental searching
 set laststatus=2 " tell VIM to always put a status line in, even if there is only one window
 set lazyredraw " Don't update the display while executing macros
-set listchars=tab:>.,eol:\$     " strings to use in 'list' mode
+set listchars=trail:*,precedes:«,extends:»,eol:↲,tab:▸\
+" set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+"set listchars=tab:>.,eol:\$     " strings to use in 'list' mode
 "set mouse=a                     " enable the use of the mouse
 set mousehide                   " Hide the mouse pointer while typing
 set nowrap                      " do not wrap lines
