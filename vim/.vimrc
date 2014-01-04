@@ -10,6 +10,7 @@ set nocompatible
 filetype off
 
 filetype plugin indent on     " required!
+set omnifunc=syntaxcomplete#Complete
 let mapleader = ","
 "
 "-------------------------------------------------------------------------------
@@ -45,6 +46,7 @@ set autoindent                  " copy indent from current line
 set autoread                    " read open files again when changed outside Vim
 set autowrite                   " write a modified buffer on each :next , ...
 set backspace=indent,eol,start  " backspacing over everything in insert mode
+:fixdel
 "set backup                      " keep a backup file
 set backupcopy=yes              " this will prevent inodes from changing when writing a file
 set browsedir=current           " which directory to use for the file browser
@@ -82,6 +84,28 @@ set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]  " Set the stat
 set stl+=%#warningmsg#
 set stl+=%{SyntasticStatuslineFlag()}
 set stl+=%*
+
+" NOT WORKING?  But should crosshair the cursor.
+" augroup CursorLine
+"       au!
+"       au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"       au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+"       au WinLeave * setlocal nocursorline
+"       au WinLeave * setlocal nocursorline
+" augroup END
+
+"Syntastic 
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_signs=1
+let g:syntastic_enable_balloons=0
+let g:syntastic_enable_highlighting=0
+let g:syntastic_auto_jump=0
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=10
+let g:syntastic_mode_map = { 'mode': 'passive',
+                               \ 'active_filetypes': ['javascript'],
+                               \ 'passive_filetypes': [] }
 
 
 "Powerline stuff
@@ -221,7 +245,6 @@ nnoremap <Leader>eb <C-w><C-v><C-l>:e ~/.bashrc<CR>
 nnoremap <Leader>a :Ack
 nnoremap <Leader>v V`]
 inoremap jj <ESC>
-noremap <Leader>w <C-w>v<C-w>l
 
 "JSON Formatting and syntax
 map <Leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
@@ -236,8 +259,9 @@ noremap <Right> <nop>
 
 nnoremap mr :MRU<CR>
 nnoremap cdc :CDC<CR>
-nnoremap <Leader>sw :set wrap<CR>
-nnoremap <Leader>nsw :set nowrap<CR>
+
+nnoremap ,gj :GitGutterNextHunk<CR>
+nnoremap ,gk :GitGutterPrevHunk<CR>
 
 
 map <C-J>  <C-W>j<C-W>_

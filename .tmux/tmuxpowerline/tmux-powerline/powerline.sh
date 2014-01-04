@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+## Disable this script until it can be fixed.
+exit 0
+
 export TMUX_POWERLINE_DIR_HOME="$(dirname $0)"
 
 source "${TMUX_POWERLINE_DIR_HOME}/config/helpers.sh"
