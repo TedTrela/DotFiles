@@ -125,7 +125,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 command CDC cd %:p:h
 
-
 set t_Co=16
 if !has('gui_running')
    let g:solarized_termcolors=&t_Co
@@ -160,6 +159,8 @@ command! Togbg call ToggleBackground()
 nnoremap <F5> :call ToggleBackground()<CR>
 inoremap <F5> <ESC>:call ToggleBackground()<CR>a
 vnoremap <F5> <ESC>:call ToggleBackground()<CR>
+
+
 
 "
 "-------------------------------------------------------------------------------
@@ -246,10 +247,14 @@ nnoremap <Leader>a :Ack
 nnoremap <Leader>v V`]
 inoremap jj <ESC>
 
+nnoremap sp :set paste!<CR>
+nnoremap sw :set wrap!<CR>
+
 "JSON Formatting and syntax
 map <Leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 "au BufRead,BufnewFile *.json set filetype=json foldmethod=syntax
 "au! Syntax json source $HOME/.vim/syntax/json.vim
+
 
 
 noremap <Up> <nop>
@@ -370,3 +375,4 @@ inoremap <silent> <F11>  <C-C>:TlistToggle<CR>
 "
 let tlist_perl_settings  = 'perl;c:constants;f:formats;l:labels;p:packages;s:subroutines;d:subroutines;o:POD'
 "
+let g:Perl_Perltidy  = 'on'

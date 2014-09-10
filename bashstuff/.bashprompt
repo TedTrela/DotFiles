@@ -26,10 +26,16 @@ bash_prompt_command() {
     then 
 	JOBCOUNT="[${numjobs}]"
     fi
-# echo "jobcount: ${JOBCOUNT}"
+    # echo "jobcount: ${JOBCOUNT}"
 
     #echo `__git_ps1`
     GIT=$(__git_ps1)
+
+    NVMVERSION=""
+    if [ $(type -t nvm) ]; then {
+        NVMVERSION=$(nvm current) ;
+    }
+    fi;
 }
 
 bash_prompt() {
@@ -76,7 +82,7 @@ bash_prompt() {
     local UC=$Y                 # user's color
     [ $UID -eq "0" ] && UC=$R   # root's color
     
-    PS1="${TITLEBAR}${C}\${JOBCOUNT}${W}[${UC}\u${M}@${UC}\h ${M}\${NEW_PWD}${W}]${B}\${GIT} ${C}\\$ ${NONE}"
+    PS1="${TITLEBAR}${EMR}\${NVMVERSION}${C}\${JOBCOUNT}${W}[${UC}\u${M}@${UC}\h ${M}\${NEW_PWD}${W}]${R}${B}\${GIT} ${C}\\$ ${NONE}"
     PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
     export PS1
 }
